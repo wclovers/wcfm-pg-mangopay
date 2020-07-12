@@ -1,8 +1,27 @@
 /**
- * All of the CSS for your public-facing functionality should be
- * included in this file.
- */
+* All of the CSS for your public-facing functionality should be
+* included in this file.
+*/
 
- .mangopay-kyc-notice {
- 	color: #FF0000;
- }
+.mangopay-kyc-notice {
+    color: #FF0000;
+}
+
+#wcfm-main-contentainer input[type="datepicker"].wcfm-text,
+#wcfm-main-contentainer input[type="datepicker"].wcfm_datepicker {
+    padding: 8px 10px;
+    width: 60%;
+    margin-bottom: 15px;
+    margin-right: 0;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 18px;
+    min-height: 35px;
+    max-width: 100%;
+    box-shadow: 1px 1px 5px 0 #E9E9E9;
+    background-color: #fff!important;
+    border: 1px solid #ccc!important;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
