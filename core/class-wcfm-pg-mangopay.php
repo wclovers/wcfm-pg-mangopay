@@ -159,7 +159,8 @@ class WCFM_PG_MangoPay {
 				'label_class' 	=> 'wcfm_title wcfm_ele paymode_field paymode_'.$gateway_slug,
 				'value' 		=> $settings['birthday'],
 				'custom_attributes'	=> array(
-					'required'	=> 'required'
+					'required'		=> 'required',
+					'date_format'	=> 'dd-mm-yy'
 				),
 			),
 			$gateway_slug.'_nationality' => array(
@@ -534,10 +535,12 @@ class WCFM_PG_MangoPay {
 			update_user_meta( $wp_user_id, 'user_nationality', $wcfm_settings_form['payment'][$gateway_slug]['nationality'] );
 		}
 
+		ob_start();
 		$mp_user_id = $this->mp->set_mp_user( $wp_user_id );
+		$a = ob_get_clean();
 
 		if( !$mp_user_id ) {
-			mangopay_log( __( 'Can not create mangopay user, please make sure to fill up your profile & address fields such as Fisrt Name, Last Name, Email, Billing Country etc', 'wc-multivendor-marketplace' ), 'error' );
+			mangopay_log( __( 'Can not create mangopay user, please make sure to fill up your profile & address fields such as First Name, Last Name, Email, Billing Country etc', 'wc-multivendor-marketplace' ), 'error' );
 			return;
 		}
 
